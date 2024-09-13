@@ -17,7 +17,7 @@ jobs:
     - name: Perform Checkout
       uses: actions/checkout@v4
     - name: Download arche.ttl
-      run: dl_binaries.sh
+      run: ./dl_binaries.sh
     - name: run binaries import
       run: ./arche__ingest_binaries.sh
     
