@@ -1,11 +1,11 @@
-name: ARCHE-Metadata-Import
+name: ARCHE-Binaries-Import
 
 on:
   workflow_dispatch
 
 jobs:
   build_pages:
-    name: Ingest Metadata into ARCHE
+    name: Ingest Binary-Data into ARCHE
     runs-on: ubuntu-latest
     env:
       ARCHE_USER: pandorfer
@@ -17,8 +17,8 @@ jobs:
     - name: Perform Checkout
       uses: actions/checkout@v4
     - name: Download arche.ttl
-      run: ./fetch_data.sh
-    - name: run metadata import
-      run: ./arche__ingest_md.sh
+      run: dl_binaries.sh
+    - name: run binaries import
+      run: ./arche__ingest_binaries.sh
     
         
