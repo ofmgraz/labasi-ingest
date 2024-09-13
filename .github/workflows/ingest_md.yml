@@ -8,8 +8,8 @@ jobs:
     name: Ingest Data into ARCHE
     runs-on: ubuntu-latest
     env:
-    #   ARCHE_USER: ${{secrets.ARCHE_USER}}
-    #   ARCHE_PASSWORD: ${{secrets.ARCHE_PASSWORD}}
+      ARCHE_USER: pandorfer
+      ARCHE_PASSWORD: ${{secrets.ARCHE_PASSWORD}}
       ARCHE: https://arche-curation.acdh-dev.oeaw.ac.at/api
       TOPCOLID: https://id.acdh.oeaw.ac.at/labasi
 
@@ -18,11 +18,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Fetch Data
       run: ./fetch_data.sh
-    - name: check data
-      run: |
-        cd to_ingest && ls -la
-    # - name: run metadata import
-    #   run: ./arche__ingest_md.sh
+    - name: run metadata import
+      run: ./arche__ingest_md.sh
     # - name: run binary_import
     #   run: ./arche__ingest_binaries.sh
     
