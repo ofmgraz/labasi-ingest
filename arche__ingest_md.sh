@@ -2,7 +2,7 @@
 
 echo "ingest metadata for for ${TOPCOLID} into ${ARCHE}"
 docker run --rm \
-  -v ${PWD}/to-ingest:/data \
+  -v ${PWD}/to_ingest:/data \
   --network="host" \
   --entrypoint arche-import-metadata \
   acdhch/arche-ingest \
