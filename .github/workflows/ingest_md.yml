@@ -8,10 +8,10 @@ jobs:
     name: Ingest Metadata into ARCHE
     runs-on: ubuntu-latest
     env:
-      ARCHE_USER: pandorfer
+      ARCHE_USER: ${{secrets.ARCHE_USER}}
       ARCHE_PASSWORD: ${{secrets.ARCHE_PASSWORD}}
       ARCHE: https://arche-curation.acdh-dev.oeaw.ac.at/api
-      TOPCOLID: https://id.acdh.oeaw.ac.at/labasi
+      TOPCOLID: https://id.acdh.oeaw.ac.at/ofmgraz
 
     steps:
     - name: Perform Checkout
@@ -20,5 +20,3 @@ jobs:
       run: ./dl_md.sh
     - name: run metadata import
       run: ./arche__ingest_md.sh
-    
-        
