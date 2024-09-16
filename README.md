@@ -1,2 +1,2 @@
 # labasi-ingest
-repo to ingest labasi data into arche
+repo to ingest ofmgraz data into arche
